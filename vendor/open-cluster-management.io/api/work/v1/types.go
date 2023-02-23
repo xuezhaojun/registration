@@ -92,9 +92,9 @@ type ManifestConfigOption struct {
 	FeedbackRules []FeedbackRule `json:"feedbackRules,omitempty"`
 
 	// UpdateStrategy defines the strategy to update this manifest. UpdateStrategy is Update
-	// if it is not set,
-	// optional
-	UpdateStrategy *UpdateStrategy `json:"updateStrategy"`
+	// if it is not set.
+	// +optional
+	UpdateStrategy *UpdateStrategy `json:"updateStrategy,omitempty"`
 }
 
 // ManifestWorkExecutor is the executor that applies the resources to the managed cluster. i.e. the
@@ -526,6 +526,9 @@ type AppliedManifestWorkSpec struct {
 	// this AppliedManifestWork links to.
 	// +required
 	HubHash string `json:"hubHash"`
+
+	// AgentID represents the ID of the work agent who is to handle this AppliedManifestWork.
+	AgentID string `json:"agentID"`
 
 	// ManifestWorkName represents the name of the related manifestwork on the hub.
 	// +required

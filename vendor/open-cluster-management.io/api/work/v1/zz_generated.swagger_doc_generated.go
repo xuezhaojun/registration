@@ -44,6 +44,7 @@ func (AppliedManifestWorkList) SwaggerDoc() map[string]string {
 var map_AppliedManifestWorkSpec = map[string]string{
 	"":                 "AppliedManifestWorkSpec represents the desired configuration of AppliedManifestWork",
 	"hubHash":          "HubHash represents the hash of the first hub kube apiserver to identify which hub this AppliedManifestWork links to.",
+	"agentID":          "AgentID represents the ID of the work agent who is to handle this AppliedManifestWork.",
 	"manifestWorkName": "ManifestWorkName represents the name of the related manifestwork on the hub.",
 }
 
@@ -132,7 +133,7 @@ var map_ManifestConfigOption = map[string]string{
 	"":                   "ManifestConfigOption represents the configurations of a manifest defined in workload field.",
 	"resourceIdentifier": "ResourceIdentifier represents the group, resource, name and namespace of a resoure. iff this refers to a resource not created by this manifest work, the related rules will not be executed.",
 	"feedbackRules":      "FeedbackRules defines what resource status field should be returned. If it is not set or empty, no feedback rules will be honored.",
-	"updateStrategy":     "UpdateStrategy defines the strategy to update this manifest. UpdateStrategy is Update if it is not set, optional",
+	"updateStrategy":     "UpdateStrategy defines the strategy to update this manifest. UpdateStrategy is Update if it is not set.",
 }
 
 func (ManifestConfigOption) SwaggerDoc() map[string]string {
